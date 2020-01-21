@@ -1,0 +1,102 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
+<div class="container">
+    <h2>Editar Produto</h2>
+    <hr>
+<div class="card mt-4">  
+  <div class="card-body">
+<div class="card-body-dark mb-4">
+<form action="/admin/produtos/edit" method="POST">
+ <input type="hidden" value="{{produto._id}}" name="id">
+  <form class="form-row">
+    <div class="col-md-2 mb-4">
+      <label for="cod_produto">Código</label>
+      <input type="text" id="cod_produto" name="cod_produto" class="form-control is-valid" value="{{produto.cod_produto}}">
+    </div>
+    <div class="col-md-10 mb-4">
+      <label for="desc_produto">Nome do Produto</label>
+      <input type="text" id="desc_produto" name="desc_produto" class="form-control is-valid" value="{{produto.desc_produto}}">
+    </div>
+    <div class="col-md-3 mb-3"> 
+   <label for="categoria">Categoria é: {{nome}}</label>
+  <select class="custom-select my-1 mr-sm-2" id="categoria" name="categoria">
+    <option value="{{produto._id}}" selected>{{produto.cod_mp}}</option>
+       {{#each categorias}}
+    <option value="{{_id}}">{{nome}}</option>  
+        {{else}}
+    <option value="0">Nenhuma categoria registrada</option>
+    {{/each}}
+   </select>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body-dark">
+        <h5 class="card-header">Composição do Produto</h5>
+ <div class="col-md-12 mb-3"> 
+   <label for="materia">Matéria-Prima</label>
+  <select class="custom-select my-1 mr-sm-2" id="materia" name="materia">
+    <option value="{{produto._id}}" selected>{{produto.materia}}</option>
+       {{#each materias}}
+    <option value="{{_id}}">{{desc_mp}}</option>  
+        {{else}}
+    <option value="0">Nenhuma MP registrada</option>
+    {{/each}}
+   </select>
+</div>
+<div>
+  <div class="col-md-10 mb-3">
+    <label for="validationServer04">Quantidade de MP usada</label>
+    <input type="text" class="form-control is-invalid" id="validationServer04" name="qtd_mp" value="{{produto.qtd_mp}}">
+</div>
+    <div class="col-md-10 mb-3">
+      <label for="validationServer05">Peso do Produto acabado</label>
+      <input type="text" class="form-control is-invalid" id="validationServer05" name="peso_produto" value="{{produto.peso_produto}}">
+    </div>
+    <div class="col-md-10 mb-3">
+      <label for="validationServer05">Adicionais</label>
+      <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="adicionais" name="add_produto" value="{{produto.add_produto}}">
+    </div>
+  </div> 
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body-dark mb-3">
+        <h5 class="card-header">Roteiro e tempo de Produção </h5>
+        <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
+          <!--div class="col-md-4 mb-3">
+            <label for="validationServer05">Etapa 1</label>
+            <input type="text" class="form-control is-invalid" placeholder="Etapa-1" name="etapa1">
+            </!--div>
+          <div class="col-md-4 mb-3">
+            <input type="text" class="form-control is-invalid" placeholder="Tempo1" name="tempo1">
+          </div --> 
+            <input type="text" placeholder="Etapa-1" name="etapa1" value="{{produto.etapa1}}">
+            <input type="text" placeholder="Tempo-1" name="tempo1" value="{{produto.tempo1}}">   
+            <input type="text" placeholder="Etapa-2" name="etapa2" value="{{produto.etapa2}}">
+            <input type="text" placeholder="Tempo-2" name="tempo2" value="{{produto.tempo2}}">
+            <input type="text" placeholder="Etapa-3" name="etapa3" value="{{produto.etapa3}}">
+            <input type="text" placeholder="Tempo-3" name="tempo3" value="{{produto.tempo3}}">
+            <input type="text" placeholder="Etapa-4" name="etapa4" value="{{produto.etapa4}}">
+            <input type="text" placeholder="Tempo-4" name="tempo4" value="{{produto.tempo4}}">
+            <input type="text" placeholder="Etapa-5" name="etapa5" value="{{produto.etapa5}}">
+            <input type="text" placeholder="Tempo-5" name="tempo5" value="{{produto.tempo5}}">
+            <input type="text" placeholder="Etapa-6" name="etapa6" value="{{produto.etapa6}}">
+            <input type="text" placeholder="Tempo-6" name="tempo6" value="{{produto.tempo6}}">
+
+      </div>
+    </div>
+  </div>
+</div>
+    <button type="submit" class="btn btn-primary mt-3">Editar Produtos</button>
+    </div>  
+</form>
+</div>

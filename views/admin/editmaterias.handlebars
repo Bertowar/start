@@ -1,0 +1,41 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
+<div class="container"></div>
+<h2>Editar Materia-Prima: </h2>
+<hr>
+<div class="card mt-4">
+    <div class="card-body">
+        <form action="/admin/materias/edit" method="POST">
+        <input type="hidden" name="id" value="{{materia._id}}">
+    <div class="form-row">
+    <div class="col-md-2 mb-4">
+      <label for="cod_produto">Código</label>
+      <input type="text" id="cod_mp" name="cod_mp" class="form-control is-valid" value="{{materia.cod_mp}}">
+    </div>
+    <div class="col-md-10 mb-4">
+      <label for="desc_produto">Nome da MP</label>
+      <input type="text" id="desc_mp" name="desc_mp" class="form-control is-valid" value="{{materia.desc_mp}}">
+    </div>
+    <div class="col-md-4 mb-4">
+        <label for="nome">Espessura (mm): </label>
+        <input type="text" id="espessura_mp" name="espessura_mp" placeholder="Espessura em mm" class="form-control" value="{{materia.espessura_mp}}">
+    </div>
+    <div class="col-md-4 mb-4">
+        <label for="nome">Comprimento (mm): </label>
+        <input type="text" id="comprimento_mp" name="comprimento_mp" placeholder="Comprimento em cm" class="form-control" value="{{materia.comprimento_mp}}">
+    </div>
+    <div class="col-md-4 mb-4">
+        <label for="nome">Peso (kg): </label>
+        <input type="text" id="peso_mp" name="peso_mp" placeholder="Peso em kg" class="form-control" value="{{materia.peso_mp}}">
+    </div>
+    <div class="col-md-4 mb-4">
+        <label for="nome">Custo (R$): </label>
+        <input type="text" id="custo_mp" name="custo_mp" placeholder="Custo em R$" class="form-control" value="{{materia.custo_mp}}">
+    </div>
+</div>
+    <button type="submit" class="btn btn-success">Editar Matéria-Prima</button>
+</div>

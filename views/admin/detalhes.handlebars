@@ -1,0 +1,90 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
+<h2>Detalhes do Produto: </h2>
+<hr>
+<div class="card mt-4">  
+  <div class="card-body">
+    <h5 class="card-title">Cod-{{produto.cod_produto}} - {{produto.desc_produto}}</h5>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body-dark">
+          <h5 class="card-header">SETUP</h5>
+            <div class="col-md-12 mb-4"> 
+              <div class="row">
+                <div class="col-2">Nº</div>
+                <div class="col-3">Etapa</div>
+                <div class="col-2">Setup</div>
+                <div class="col-2">MOD</div>
+                <div class="col-3">Custo Total</div>
+              </div>
+              <div class="row">
+                <div class="col-2">1</div>
+                <div class="col-3">{{produto.etapa1}}</div>
+                <div class="col-2">2</div>
+                <div class="col-2">0,117</div>
+                <div class="col-3">calc</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body-dark">
+          <h5 class="card-header">MÃ0-DE-OBRA</h5>
+            <div class="col-md-12 mb-4"> 
+              <div class="row">
+                <div class="col-2">Nº</div>
+                <div class="col-3">Etapa</div>
+                <div class="col-2">Tempo</div>
+                <div class="col-2">MOD</div>
+                <div class="col-3">Custo Total</div>
+              </div>
+              <div class="row">
+                <div class="col-2">1</div>
+                <div class="col-3">{{produto.etapa1}}</div>
+                <div class="col-2">{{produto.tempo1}}</div>
+                <div class="col-2">0,117</div>
+                <div class="col-3">({{produto.tempo1}}*0,117)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body-dark">
+          <h5 class="card-header">MATÉRIA-PRIMA</h5>
+            <div class="col-md-12 mb-4"> 
+              <div class="row">
+                <div class="col-3">Código</div>
+                <div class="col-3">Quantidade</div>
+                <div class="col-2">Custo</div>
+                <div class="col-3">Custo Total</div>
+              </div>
+              <div class="row">
+                <div class="col-3">{{produto.materia}}</div>
+                <div class="col-3">{{produto.qtd_mp}}</div>
+                <div class="col-2">aqui</div>
+                <div class="col-3">col</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+	

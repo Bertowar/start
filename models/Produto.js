@@ -10,60 +10,81 @@ const Produto = new Schema({
         type: String,
         required: true
     },
-    peso_mp: {
+    categoria: {
+        type: Schema.Types.ObjectId,
+        ref: "categorias",
+        require: true
+    }, 
+    materia : {
+        type: Schema.Types.ObjectId,
+        ref: "mateiras",
+        require: true
+    }, 
+    qtd_mp: {
         type: String,
         required: true
     },
     peso_produto: {
         type: String,
-        required: true
-    },
-    Etapa1: {
+        require: true
+    }, 
+    add_produto: {
         type: String,
         required: true
     },
-    Etapa2: {
+   etapa1: {
         type: String,
         required: true
+    }, 
+    etapa2: {
+        type: String,
+        required: false
     },
-    Etapa3: {
+    etapa3: {
+        type: String,
+        required: false
+    },
+    etapa4: {
+        type: String,
+        required: false
+    },
+    etapa5: {
+        type: String,
+        required: false
+    },
+    etapa6: {
+        type: String,
+        required: false
+    },
+        tempo1: {
         type: String,
         required: true
-    },
-    Etapa4: {
+    },  
+    tempo2: {
         type: String,
-        required: true
+        required: false,
     },
-    Etapa5: {
+    tempo3: {
         type: String,
-        required: true
-    },
-    Etapa6: {
+        required: false
+    },  
+    tempo4: {
         type: String,
-        required: true
-    },
-    Etapa7: {
+        required: false
+    },  
+    tempo5: {
         type: String,
-        required: true
-    },
-    Etapa8: {
+        required: false
+    },  
+    tempo6: {
         type: String,
-        required: true
-    },
-    Etapa9: {
-        type: String,
-        required: true
-    },
-    date_mp: {
+        required: false,
+    },   
+    date: {
         type: Date,
         default: Date.now()
-    },
-    categoria: {
-        type: Schema.Types.ObjectId,
-        ref: "categorias",
-        required: true
     }
-    
+   
 })
 
 mongoose.model("produtos", Produto)

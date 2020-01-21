@@ -1,0 +1,40 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
+<div class="container">
+  <h4>Cadastrar Matéria-Prima</h4>
+     <form action="/admin/materias/nova" method="POST">
+        <div class="form-row">
+         <div class="col-md-2 mb-4">
+            <label for="cod_mp">Código</label>
+            <input type="text" id="cod_mp" name="cod_mp" class="form-control is-valid">
+        </div>
+        <div class="col-md-10 mb-4">
+            <label for="nome">Nome da Matéria-Prima: </label>
+            <input type="text" id="desc_mp" name="desc_mp" placeholder="Nome da Matéia-Prima" class="form-control">
+        </div>
+        <div class="col-md-4 mb-4">
+            <label for="nome">Espessura (mm): </label>
+            <input type="text" id="espessura_mp" name="espessura_mp" placeholder="Espessura em mm" class="form-control">
+        </div>
+        <div class="col-md-4 mb-4">
+            <label for="nome">Comprimento (mm): </label>
+            <input type="text" id="comprimento_mp" name="comprimento_mp" placeholder="Comprimento em cm" class="form-control">
+        </div>
+                <div class="col-md-4 mb-4">
+            <label for="nome">Peso (kg): </label>
+            <input type="text" id="peso_mp" name="peso_mp" placeholder="Peso em kg" class="form-control">
+        </div>
+        <div class="col-md-4 mb-4">
+            <label for="nome">Custo (R$): </label>
+            <input type="text" id="custo_mp" name="custo_mp" placeholder="Custo em R$" class="form-control">
+        </div>
+        <div class="button">
+    <button type="submit" class="btn btn-success mt-4 px-2">Cadastrar Matéria-Prima</button>
+    </div>
+</form>
+</div>
+</div>
